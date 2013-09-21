@@ -357,12 +357,19 @@ h2 {
   text-shadow: 0 2px 3px #000;
 }
 
-ul {
+.notification {
+    color: #fff;
+    font-size: 1.5em;
+    height: 2em;
+    line-height: 2em;
+}
+
+#switches, #switchesComponents {
   list-style: none;
   margin: 1em 0 0 0;
   padding: 0;
 }
-ul li {
+#switches li, #switchesComponents li {
   margin: 1em;
   display: inline-block;
 }

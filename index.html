@@ -27,38 +27,65 @@
 
         <h1>Checkbox Power<br>With Web Components</h1>
         <h2>Check the "normal" checkboxes</h2>
-        <ul>
+        <ul id="switches">
           <li>
             <div class="switch big">
               <div class="switch__circle">
-                <input id="switcherBig" class="switch__input" type="checkbox">
+                <input id="switcherBig" class="switch__input" type="checkbox" checked="checked">
                 <label class="switch__label" for="switcherBig">Switch me!!!</label>
               </div>
             </div>
           <li>
             <div class="switch medium">
               <div class="switch__circle">
-                <input id="switcherMedium" class="switch__input" type="checkbox">
+                <input id="switcherMedium" class="switch__input" type="checkbox" checked="checked">
                 <label class="switch__label" for="switcherMedium">Switch me!!!</label>
               </div>
             </div>
           <li>
             <div class="switch small">
               <div class="switch__circle">
-                <input id="switcherSmall" class="switch__input" type="checkbox">
+                <input id="switcherSmall" class="switch__input" type="checkbox" checked="checked">
                 <label class="switch__label" for="switcherSmall">Switch me!!!</label>
               </div>
             </div>
         </ul>
+        <div id="switchesNotifications" class="notification"></div>
+        <script>
+          ( function( document ) {
+            var switchList    = document.getElementById( 'switches' );
+
+
+            switchList.addEventListener( 'change', changeHandler, false );
+
+            function changeHandler( event ) {
+              var notifications = document.getElementById( 'switchesNotifications' );
+
+              notifications.innerHTML = '!!! ' + event.target.id +' switched !!!';
+            }
+          } )( document );
+        </script>
 
         <h2>Check the "web components" checkboxes</h2>
-        <ul>
-            <li><sj-checkbox size="big" fallbackId="checkboxBigCompenent"></sj-checkbox>
+        <ul id="switchesComponents">
+            <li><sj-checkbox size="big" fallbackId="checkboxBigComponent"></sj-checkbox>
             <li><sj-checkbox size="medium" fallbackId="checkboxMediumComponent"></sj-checkbox>
             <li><sj-checkbox size="small" fallbackId="checkboxSmallComponent"></sj-checkbox>
         </ul>
+        <div id="switchesComponentsNotifications" class="notification"></div>
+        <script>
+          ( function( document ) {
+            var switchList    = document.getElementById( 'switchesComponents' );
 
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+
+            switchList.addEventListener( 'change', changeHandler, false );
+
+            function changeHandler( event ) {
+              var notification = document.getElementById( 'switchesComponentsNotifications' );
+
+              notification.innerHTML = '!!! ' + event.detail.id +' switched !!!';
+            }
+          } )( document );
+        </script>
     </body>
 </html>

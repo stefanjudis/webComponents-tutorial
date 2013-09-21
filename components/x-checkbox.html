@@ -173,7 +173,7 @@
     </style>
     <div class="switch {{size}}">
       <div class="switch__circle">
-          <input id="{{fallbackId}}" class="switch__input" type="checkbox" on-change="changeHandler">
+          <input id="{{fallbackId}}" class="switch__input" type="checkbox" on-change="changeHandler"checked="checked">
           <label class="switch__label" for="{{fallbackId}}">Switch me!!!</label>
         </div>
       </div>
@@ -183,8 +183,13 @@
     Polymer( 'sj-checkbox', {
       size: 'medium',
       fallbackId: 'switcher',
-      changeHandler: function() {
-        console.log( 'yeah' );
+      changeHandler: function( event ) {
+        this.fire(
+          'change',
+          {
+            id: event.target.id
+          }
+        );
       }
     } );
   </script>
