@@ -1,4 +1,4 @@
-<polymer-element name="sj-checkbox" attributes="size">
+<polymer-element name="sj-checkbox" attributes="size fallbackId">
   <template>
     <style>
       /*
@@ -173,15 +173,19 @@
     </style>
     <div class="switch {{size}}">
       <div class="switch__circle">
-          <input id="switcherBig" class="switch__input" type="checkbox">
-          <label class="switch__label" for="switcherBig">Switch me!!!</label>
+          <input id="{{fallbackId}}" class="switch__input" type="checkbox" on-change="changeHandler">
+          <label class="switch__label" for="{{fallbackId}}">Switch me!!!</label>
         </div>
       </div>
     </div>
   </template>
   <script>
     Polymer( 'sj-checkbox', {
-      size: 'medium'
+      size: 'medium',
+      fallbackId: 'switcher',
+      changeHandler: function() {
+        console.log( 'yeah' );
+      }
     } );
   </script>
 </polymer-element>
