@@ -6,11 +6,15 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>WebComponents tutorial</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <!-- @start Polymer stuff -->
+        <script src="js/vendor/polymer.min.js"></script>
+
+        <link rel="import" href="components/x-checkbox.html">
+        <!-- @end Polymer stuff -->
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
@@ -21,22 +25,40 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+        <h1>Checkbox Power<br>With Web Components</h1>
+        <h2>Check the "normal" checkboxes</h2>
+        <ul>
+          <li>
+            <div class="switch big">
+              <div class="switch__circle">
+                <input id="switcherBig" class="switch__input" type="checkbox">
+                <label class="switch__label" for="switcherBig">Switch me!!!</label>
+              </div>
+            </div>
+          <li>
+            <div class="switch medium">
+              <div class="switch__circle">
+                <input id="switcherMedium" class="switch__input" type="checkbox">
+                <label class="switch__label" for="switcherMedium">Switch me!!!</label>
+              </div>
+            </div>
+          <li>
+            <div class="switch small">
+              <div class="switch__circle">
+                <input id="switcherSmall" class="switch__input" type="checkbox">
+                <label class="switch__label" for="switcherSmall">Switch me!!!</label>
+              </div>
+            </div>
+        </ul>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <h2>Check the "web components" checkboxes</h2>
+        <ul>
+            <li><sj-checkbox size="big"></sj-checkbox>
+            <li><sj-checkbox size="medium"></sj-checkbox>
+            <li><sj-checkbox size="small"></sj-checkbox>
+        </ul>
+
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
     </body>
 </html>
