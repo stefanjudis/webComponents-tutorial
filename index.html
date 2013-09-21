@@ -55,7 +55,6 @@
           ( function( document ) {
             var switchList    = document.getElementById( 'switches' );
 
-
             switchList.addEventListener( 'change', changeHandler, false );
 
             function changeHandler( event ) {
@@ -77,8 +76,7 @@
           ( function( document ) {
             var switchList    = document.getElementById( 'switchesComponents' );
 
-
-            switchList.addEventListener( 'change', changeHandler, false );
+            switchList.addEventListener( 'componentChange', changeHandler, false );
 
             function changeHandler( event ) {
               var notification = document.getElementById( 'switchesComponentsNotifications' );
