@@ -391,12 +391,12 @@ h2 {
     line-height: 2em;
 }
 
-#switches, #switchesComponents {
+#switches, #switchesComponents, #switchesComponentsBug {
   list-style: none;
   margin: 1em 0 0 0;
   padding: 0;
 }
-#switches li, #switchesComponents li {
+#switches li, #switchesComponents li, #switchesComponentsBug li {
   margin: 1em;
   display: inline-block;
 }
